@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./shop.scss";
 
 const Shop = () => {
 
@@ -17,7 +18,7 @@ const Shop = () => {
   };
 
   return (
-    <div>
+    <div className="shop">
       {items.map(item => (
         <img key={item.id} src={item.images.small} alt={item.name}/>
       ))}

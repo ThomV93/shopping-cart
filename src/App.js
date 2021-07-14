@@ -4,6 +4,7 @@ import Home from "./components/home/Home";
 import Shop from "./components/shop/Shop";
 import Cart from "./components/cart/Cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import "./app.scss";
 
 const App = () => {
   return (
