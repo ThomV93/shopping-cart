@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Shop from "./components/Shop";
-import Cart from "./components/Cart";
+import Navbar from "./components/navbar/Navbar";
+import Home from "./components/home/Home";
+import Shop from "./components/shop/Shop";
+import Cart from "./components/cart/Cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
