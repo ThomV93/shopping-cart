@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 75px;
+  width: 100%;
+  box-shadow: 0 2px 8px #e0e0e0;
+  padding: 0 5rem;
+
+  h1 {
+    width: 40%;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    width: 60%;
+
+    li {
+      margin-left: 4rem;
+      font-weight: 300;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
