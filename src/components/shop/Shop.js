@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./shop.scss";
 
-const Shop = () => {
-
+const Home = () => {
   useEffect(() => {
     fetchItems();
   }, []);
@@ -10,9 +10,8 @@ const Shop = () => {
   const [items, setItems] = useState([]);
 
   const fetchItems = async () => {
-    const data = await fetch("https://api.pokemontcg.io/v2/cards?q=set.id:base1");
+    const data = await fetch("https://api.pokemontcg.io/v2/sets?q=series:base");
     const items = await data.json();
-    console.log(items.data);
     // set state
     setItems(items.data);
   };
@@ -20,10 +19,19 @@ const Shop = () => {
   return (
     <div className="shop">
       {items.map(item => (
-        <img key={item.id} src={item.images.small} alt={item.name}/>
+        <Link key={item.ptcgoCode} to={`/shop/${item.id}`}>
+          <div className="set-container">
+            <img src={item.images.logo} alt={item.name}/>
+            <div>
+              <img src={item.images.symbol} alt="symbol"/>
+              <p className="set-name">{item.name}</p>
+              <p className="set-release-date">Released in {item.releaseDate}</p>
+            </div>
+          </div>
+        </Link>
       ))}
     </div>
   )
 };
 
-export default Shop
+export default Home
