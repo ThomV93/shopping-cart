@@ -1,0 +1,17 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+  
+    img {
+      &:hover{
+        transform: scale(1.05);
+      }
+      margin: 0.7rem;
+      border-radius: 8px;
+      box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.45);
+      cursor: pointer;
+      transition: 300ms;
+    }
+  }
