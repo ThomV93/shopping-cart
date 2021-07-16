@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./card.scss";
 
 const Card = ({ match }) => {
   useEffect(() => {
@@ -19,7 +20,7 @@ const Card = ({ match }) => {
   };
 
   return (
-    <div>
+    <div className="card">
       <img src={item.images.large} alt={item.name}/>
     </div>
   )
