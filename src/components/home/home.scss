@@ -1,0 +1,53 @@
+.home {
+  display: grid;
+  grid-column: repeat(2, 50%);
+  color: #fff;
+  height: 92vh;
+  overflow: hidden;
+  background: rgb(251,194,43);
+  background: linear-gradient(207deg, rgba(251,194,43,1) 4%, rgba(58,79,153,1) 76%);
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1;
+    height: 92vh;
+    width: 50vw;
+    z-index: 1;
+    padding: 5rem;
+    background-color: transparent;
+
+    h1 {
+      font-size: 5rem;
+      text-align: right;
+      line-height: 6rem;
+    }
+
+    h3 {
+      text-align: right;
+      font-weight: 300;
+      font-size: 1.8rem;
+    }
+
+    div {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      flex-grow: 1;
+      align-self: flex-end;
+      text-align: right;
+    }
+  }
+
+  .image-container {
+    grid-column: 2;
+    background-color: transparent;
+
+    img {
+      padding-top: 5rem;
+      height: 60vh;
+      width: auto;
+      z-index: -1;
+    }
+  }
+}
