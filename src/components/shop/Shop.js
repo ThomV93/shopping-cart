@@ -18,18 +18,20 @@ const Home = () => {
 
   return (
     <div className="shop">
-      {items.map(item => (
-        <Link key={item.ptcgoCode} to={`/shop/${item.id}`}>
-          <div className="set-container">
-            <img src={item.images.logo} alt={item.name}/>
-            <div>
-              <img src={item.images.symbol} alt="symbol"/>
-              <p className="set-name">{item.name}</p>
-              <p className="set-release-date">Released in {item.releaseDate}</p>
+      <div className="sets">
+        {items.map(item => (
+          <Link key={item.ptcgoCode} to={`/shop/${item.id}`}>
+            <div className="set-container">
+              <img src={item.images.logo} alt={item.name}/>
+              <div>
+                <img src={item.images.symbol} alt="symbol"/>
+                <p className="set-name">{item.name}</p>
+                <p className="set-release-date">Released in {item.releaseDate}</p>
+              </div>
             </div>
-          </div>
-        </Link>
-      ))}
+          </Link>
+        ))}
+      </div>
     </div>
   )
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./cards.scss";
 import { Link } from "react-router-dom";
+import "./cards.scss";
 
 const Cards = ({ match }) => {
 
@@ -20,11 +20,13 @@ const Cards = ({ match }) => {
 
   return (
     <div className="cards">
-      {cards.map(item => (
-        <Link key={item.id} to={`/card/${item.id}`}>
-          <img src={item.images.small} alt={item.name}/>
-        </Link>
-      ))}
+      <div className="card-container">
+        {cards.map(item => (
+          <Link key={item.id} to={`/card/${item.id}`}>
+            <img src={item.images.small} alt={item.name}/>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }
