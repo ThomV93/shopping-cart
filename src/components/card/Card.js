@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import CardTitle from "./CardTitle";
+import CardDetails from "./CardDetails";
+import CardPrices from "./CardPrices";
 import "./card.scss";
 
 const Card = ({ match }) => {
@@ -25,66 +28,42 @@ const Card = ({ match }) => {
     setItem(item.data);
   };
 
+  const title = {
+    name: item.name,
+    type: item.supertype,
+    subtype: item.subtypes[0],
+    description: item.flavorText,
+  };
+
+  const details = {
+    hp: item.hp,
+    level: item.level,
+    setName: item.set.name,
+    setSeries: item.set.series,
+    pokedexNum: item.nationalPokedexNumbers[0],
+    cardNum: item.number,
+    printedTotal: item.set.printedTotal,
+    artist: item.artist,
+    rarity: item.rarity,
+  };
+  
   const prices = item.tcgplayer.prices;
-  const low = prices[Object.keys(prices)[0]].low;
-  const market = prices[Object.keys(prices)[0]].market;
-  const high = prices[Object.keys(prices)[0]].high;
-  console.log(item);
+  const priceInfo = {
+    low: prices[Object.keys(prices)[0]].low,
+    market: prices[Object.keys(prices)[0]].market,
+    high: prices[Object.keys(prices)[0]].high,
+  };
 
   return (
     <div className="card">
       <img src={item.images.large} alt={item.name}/>
       <div className="card-details">
-        <div className="title-section">
-          <h1>{item.name}</h1>
-          <p>{item.supertype} - {item.subtypes[0]}</p>
-        </div>
-        <div className="description-section">
-          <p>{item.flavorText}</p>
-        </div>
-        <h2>Info</h2>
-        <div className="info-section">
-          <div>
-            <h3>HP</h3>
-            <p>{item.hp}</p>
-            <h3>Level</h3>
-            <p>{item.level}</p>
-          </div>
-          <div>
-            <h3>Set Name</h3>
-            <p>{item.set.name}</p>
-            <h3>Set Series</h3>
-            <p>{item.set.series}</p>
-          </div>
-          <div>
-            <h3>Pokedex Nº</h3>
-            <p>{item.nationalPokedexNumbers[0]}</p>
-            <h3>Card Nº</h3>
-            <p>{item.number}/{item.set.printedTotal}</p>
-          </div>
-          <div>
-            <h3>Artist</h3>
-            <p>{item.artist}</p>
-            <h3>Rarity</h3>
-            <p>{item.rarity}</p>
-          </div>
-        </div>
+        <CardTitle title={title}/>
+        <h2>Details</h2>
+        <CardDetails details={details}/>
         <h2>Prices</h2>
         <span>Last Updated {item.tcgplayer.updatedAt}</span>
-        <div className="price-section">
-          <div className="price-container">
-            <h3>High Market</h3>
-            <p className="high-price">${high === undefined ? "..." : high}</p>
-          </div>
-          <div className="price-container">
-            <h3>Market</h3>
-            <p>${market === undefined ? "..." : market}</p>
-          </div>
-          <div className="price-container">
-            <h3>Low Market</h3>
-            <p className="low-price">${low === undefined ? "..." : low}</p>
-          </div>
-        </div>
+        <CardPrices priceInfo={priceInfo}/>
         <button>Add to Cart</button>
       </div>
     </div>
