@@ -17,9 +17,9 @@ const Card = ({ match }) => {
         obj: {},
       },
     },
-    subtypes: [],
+    subtypes: "n/a",
     set: {},
-    nationalPokedexNumbers: [],
+    nationalPokedexNumbers: "n/a",
   });
 
   const fetchItem = async () => {
@@ -28,19 +28,20 @@ const Card = ({ match }) => {
     setItem(item.data);
   };
 
+
   const title = {
     name: item.name,
     type: item.supertype,
-    subtype: item.subtypes[0],
+    subtype: item.subtypes === undefined ? "n/a" : item.subtypes[0],
     description: item.flavorText,
   };
 
   const details = {
-    hp: item.hp,
-    level: item.level,
+    hp: item.hp === undefined ? "n/a" : item.hp,
+    level: item.level === undefined ? "n/a" : item.level,
     setName: item.set.name,
     setSeries: item.set.series,
-    pokedexNum: item.nationalPokedexNumbers[0],
+    pokedexNum: item.nationalPokedexNumbers === undefined ? "n/a" : item.nationalPokedexNumbers[0],
     cardNum: item.number,
     printedTotal: item.set.printedTotal,
     artist: item.artist,
@@ -53,6 +54,8 @@ const Card = ({ match }) => {
     market: prices[Object.keys(prices)[0]].market,
     high: prices[Object.keys(prices)[0]].high,
   };
+
+  console.log(item);
 
   return (
     <div className="card">
