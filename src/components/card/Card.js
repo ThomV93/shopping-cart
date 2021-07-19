@@ -38,36 +38,51 @@ const Card = ({ match }) => {
         <div className="title-section">
           <h1>{item.name}</h1>
           <p>{item.supertype} - {item.subtypes[0]}</p>
-          <p>Set Nº: {item.number}/{item.set.printedTotal}</p>
-          <p>Pokedex Nº: {item.nationalPokedexNumbers[0]}</p>
         </div>
         <div className="description-section">
-          <h1>Description</h1>
           <p>{item.flavorText}</p>
         </div>
-        <div>
-          <h1>Info</h1>
-          <p>Artist: {item.artist}</p>
-          <p>Rarity: {item.rarity}</p>
-          <p>HP: {item.hp}</p>
-          <p>Level: {item.level}</p>
+        <h2>Info</h2>
+        <div className="info-section">
+          <div>
+            <h3>HP</h3>
+            <p>{item.hp}</p>
+            <h3>Level</h3>
+            <p>{item.level}</p>
+          </div>
+          <div>
+            <h3>Set Name</h3>
+            <p>{item.set.name}</p>
+            <h3>Set Series</h3>
+            <p>{item.set.series}</p>
+          </div>
+          <div>
+            <h3>Pokedex Nº</h3>
+            <p>{item.nationalPokedexNumbers[0]}</p>
+            <h3>Card Nº</h3>
+            <p>{item.number}/{item.set.printedTotal}</p>
+          </div>
+          <div>
+            <h3>Artist</h3>
+            <p>{item.artist}</p>
+            <h3>Rarity</h3>
+            <p>{item.rarity}</p>
+          </div>
         </div>
+        <h2>Prices</h2>
+        <span>Last Updated {item.tcgplayer.updatedAt}</span>
         <div className="price-section">
-          <h1>Prices</h1>
-          <p>Last Updated</p>
-          <div className="prices-wrapper">
-            <div className="price-container">
-              <p>Market</p>
-              <p>${market === undefined ? "..." : market}</p>
-            </div>
-            <div className="price-container">
-              <p>High Market</p>
-              <p>${high === undefined ? "..." : high}</p>
-            </div>
-            <div className="price-container">
-              <p>Low Market</p>
-              <p>${low === undefined ? "..." : low}</p>
-            </div>
+          <div className="price-container">
+            <h3>High Market</h3>
+            <p className="high-price">${high === undefined ? "..." : high}</p>
+          </div>
+          <div className="price-container">
+            <h3>Market</h3>
+            <p>${market === undefined ? "..." : market}</p>
+          </div>
+          <div className="price-container">
+            <h3>Low Market</h3>
+            <p className="low-price">${low === undefined ? "..." : low}</p>
           </div>
         </div>
         <button>Add to Cart</button>
