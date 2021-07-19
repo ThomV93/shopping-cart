@@ -17,9 +17,8 @@ const Card = ({ match }) => {
         obj: {},
       },
     },
-    subtypes: "n/a",
+    subtypes: [],
     set: {},
-    nationalPokedexNumbers: "n/a",
   });
 
   const fetchItem = async () => {

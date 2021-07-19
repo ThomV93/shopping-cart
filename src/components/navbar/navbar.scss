@@ -5,8 +5,10 @@
   min-height: 50px;
   width: 100%;
   box-shadow: 0 2px 8px #e0e0e0;
+  background-color: white;
   padding: 0 3.9rem;
   box-sizing: border-box;
+  z-index: 3;
 
   h1 {
     font-family: walkway;

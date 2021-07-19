@@ -18,6 +18,7 @@ const Home = () => {
 
   return (
     <div className="shop">
+      <h1>Available Sets</h1>
       <div className="sets">
         {items.map(item => (
           <Link key={item.ptcgoCode} to={`/shop/${item.id}`}>

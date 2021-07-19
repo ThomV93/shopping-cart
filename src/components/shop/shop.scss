@@ -1,7 +1,6 @@
 .shop {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   height: 92vh;
   width: 100vw;
   padding: 2rem 3.8rem;
@@ -13,11 +12,12 @@
 
   h1 {
     font-family: walkway;
-    margin: 0.7rem;
+    margin: 0;
+    padding: 0;
   }
 
   .sets {
-    height: 92vh;
+    height: 85vh;
     width: 100vw;
     max-width: 1344px;
     display: flex;
