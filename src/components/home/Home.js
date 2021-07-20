@@ -1,6 +1,6 @@
 import React from "react";
 import "./home.scss";
-import pokeball from "./pokeball_shadow.png";
+import pokeball from "../../Images/pokeball.png";
 
 const Home = () => {
   return (
