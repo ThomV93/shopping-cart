@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./shop.scss";
 
-const Home = () => {
+const Shop = () => {
   useEffect(() => {
     fetchItems();
   }, []);
@@ -12,7 +12,6 @@ const Home = () => {
   const fetchItems = async () => {
     const data = await fetch("https://api.pokemontcg.io/v2/sets?q=series:base");
     const items = await data.json();
-    // set state
     setItems(items.data);
   };
 
@@ -37,4 +36,4 @@ const Home = () => {
   )
 };
 
-export default Home
+export default Shop

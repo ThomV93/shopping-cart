@@ -5,18 +5,15 @@ import "./cards.scss";
 const Cards = ({ match }) => {
 
   useEffect(() => {
+    const fetchCards = async () => {
+      const data = await fetch(`https://api.pokemontcg.io/v2/cards?q=set.id:${match.params.id}`);
+      const cards = await data.json();
+      setCards(cards.data);
+    };
     fetchCards();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [match.params.id]);
 
   const [cards, setCards] = useState([]);
-
-  const fetchCards = async () => {
-    const data = await fetch(`https://api.pokemontcg.io/v2/cards?q=set.id:${match.params.id}`);
-    const cards = await data.json();
-    // set state
-    setCards(cards.data);
-  };
 
   return (
     <div className="cards">
