@@ -2,13 +2,18 @@ import React, { useState, useEffect } from "react";
 import CardTitle from "./CardTitle";
 import CardDetails from "./CardDetails";
 import CardPrices from "./CardPrices";
+import useStore from "../../services/cartState";
 import "./card.scss";
 
 const Card = ({ match }) => {
   useEffect(() => {
+    const fetchItem = async () => {
+      const data = await fetch(`https://api.pokemontcg.io/v2/cards/${match.params.id}`);
+      const item = await data.json();
+      setItem(item.data);
+    };
     fetchItem();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [match.params.id]);
 
   const [item, setItem] = useState({
     images: {},
@@ -21,12 +26,7 @@ const Card = ({ match }) => {
     set: {},
   });
 
-  const fetchItem = async () => {
-    const data = await fetch(`https://api.pokemontcg.io/v2/cards/${match.params.id}`);
-    const item = await data.json();
-    setItem(item.data);
-  };
-
+  const pushToCart = useStore(state => state.pushToArray);
 
   const title = {
     name: item.name,
@@ -66,7 +66,7 @@ const Card = ({ match }) => {
         <h2>Prices</h2>
         <span>Last Updated {item.tcgplayer.updatedAt}</span>
         <CardPrices priceInfo={priceInfo}/>
-        <button>Add to Cart</button>
+        <button onClick={() => pushToCart(item)}>Add to Cart</button>
       </div>
     </div>
   )

@@ -1,9 +1,14 @@
-import React from "react";
+import useStore from "../../services/cartState";
 
 const Cart = () => {
+
+  const cart = useStore(state => state.cart);
+
+  console.log(cart);
+
   return (
     <div>
-      <h1>Hello from Cart</h1>
+      <h1>{cart.length}</h1>
     </div>
   )
 };
