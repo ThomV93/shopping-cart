@@ -54,7 +54,15 @@ const Card = ({ match }) => {
     high: prices[Object.keys(prices)[0]].high,
   };
 
-  console.log(item);
+  const cartItem = {
+    id: item.id,
+    image: item.images.small,
+    name: item.name,
+    setName: item.set.name,
+    setDate: item.set.releaseDate,
+    price: prices[Object.keys(prices)[0]].market,
+    amount: 1,
+  }
 
   return (
     <div className="card">
@@ -66,7 +74,7 @@ const Card = ({ match }) => {
         <h2>Prices</h2>
         <span>Last Updated {item.tcgplayer.updatedAt}</span>
         <CardPrices priceInfo={priceInfo}/>
-        <button onClick={() => pushToCart(item)}>Add to Cart</button>
+        <button onClick={() => pushToCart(cartItem)}>Add to Cart</button>
       </div>
     </div>
   )

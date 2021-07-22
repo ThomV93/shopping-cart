@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useStore from "../../services/cartState";
 import "./navbar.scss";
 
 const Navbar = () => {
+
+  const cart = useStore(state => state.cart);
+
   return (
     <div className="navbar">
       <h1>Poké Antiques</h1>
@@ -14,7 +18,7 @@ const Navbar = () => {
           <li>Shop</li>
         </Link>
         <Link to="/cart">
-          <li>Cart</li>
+          <li>Cart <span>({cart.length})</span></li>
         </Link>
       </ul>
     </div>
