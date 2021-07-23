@@ -6,8 +6,10 @@ import useStore from "../../services/cartState";
 import "./card.scss";
 
 const Card = ({ match }) => {
+  // retrieve relevant data from api
   useEffect(() => {
     const fetchItem = async () => {
+      // use router provided props in the request
       const data = await fetch(`https://api.pokemontcg.io/v2/cards/${match.params.id}`);
       const item = await data.json();
       setItem(item.data);
@@ -25,8 +27,6 @@ const Card = ({ match }) => {
     subtypes: [],
     set: {},
   });
-
-  const pushToCart = useStore(state => state.pushToArray);
 
   const title = {
     name: item.name,
@@ -62,7 +62,19 @@ const Card = ({ match }) => {
     setDate: item.set.releaseDate,
     price: prices[Object.keys(prices)[0]].market,
     amount: 1,
-  }
+    increaseAmount: () => {cartItem.amount++},
+  };
+
+  // extract shared state
+  const cart = useStore(state => state.cart);
+  const pushToCart = useStore(state => state.pushToArray);
+
+  // check cart before pushing new item
+  const SendToCart = () => {
+    let index = cart.findIndex(card => card.name === cartItem.name);
+    const selectedItem = cart.filter(card => card.name === cartItem.name);
+    index === -1 ? pushToCart(cartItem) : selectedItem[0].increaseAmount();
+  };
 
   return (
     <div className="card">
@@ -74,7 +86,7 @@ const Card = ({ match }) => {
         <h2>Prices</h2>
         <span>Last Updated {item.tcgplayer.updatedAt}</span>
         <CardPrices priceInfo={priceInfo}/>
-        <button onClick={() => pushToCart(cartItem)}>Add to Cart</button>
+        <button onClick={() => SendToCart()}>Add to Cart</button>
       </div>
     </div>
   )
