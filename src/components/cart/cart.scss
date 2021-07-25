@@ -1,0 +1,137 @@
+.cart {
+  display: flex;
+  justify-content: space-between;
+  height: 92vh;
+  padding: 1.3rem 3.8rem;
+
+  h1 {
+    font-size: 1.5rem;
+    font-family: walkway;
+    margin: 0;
+    padding: 0;
+  }
+
+  .item-container {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    max-width: 1000px;
+    border-bottom: 1px solid #aaa;
+    padding: 1.5rem;
+
+    .info-container {
+      display: flex;
+
+      .card {
+        height: 200px;
+        width: auto;
+        border-radius: 8px;
+        box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.45);
+        transition: 300ms;
+        padding: 0;
+      }
+
+      div {
+        margin-left: 3rem;
+
+        p {
+          font-size: 0.85rem;
+          margin-bottom: 0.3rem;
+          color: #555;
+        }
+
+        span {
+          color: #000;
+          font-size: 1.1rem;
+          margin-left: 1rem;
+        }
+
+        .amount-container {
+          display: flex;
+          gap: 0.8rem;
+          margin: 0;
+
+          p {
+            color: #000;
+            font-size: 1.1rem;
+            margin: 0;
+          }
+
+          img {
+            &:hover {
+              transform: scale(1.2);
+            }
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .price-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      img {
+        &:hover {
+          transform: scale(1.08);
+        }
+        transition: 200ms;
+        height: 22px;
+        width: auto;
+        align-self: flex-end;
+        cursor: pointer;
+      }
+
+      p {
+        color: #000;
+        font-size: 1.1rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .order-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 2rem;
+    border: 1px solid #aaa;
+    width: 400px;
+    height: fit-content;
+    border-radius: 15px;
+    padding: 1.5rem;
+
+    .subtotal-container {
+      padding: 1rem 0;
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    .value-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button {
+      &:hover {
+        background-color: #45a049;
+      }
+      width: 100%;
+      font-size: 1.1rem;
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      margin-top: 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}
