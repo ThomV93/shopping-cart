@@ -67,13 +67,13 @@ const Card = ({ match }) => {
 
   // extract shared state
   const cart = useStore(state => state.cart);
-  const pushToCart = useStore(state => state.pushToArray);
+  const addCard = useStore(state => state.addCard);
 
   // check cart before pushing new item
   const SendToCart = () => {
     let index = cart.findIndex(card => card.name === cartItem.name);
     const selectedItem = cart.filter(card => card.name === cartItem.name);
-    index === -1 ? pushToCart(cartItem) : selectedItem[0].increaseAmount();
+    index === -1 ? addCard(cartItem) : selectedItem[0].increaseAmount();
   };
 
   return (

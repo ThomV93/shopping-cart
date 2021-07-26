@@ -1,10 +1,14 @@
+import useStore from "../../services/cartState";
 import minus from "../../Images/minus.svg";
 import plus from "../../Images/plus.svg";
 import xCircle from "../../Images/x-circle.svg";
 
 const CartItem = props => {
+  const removeCard = useStore(state => state.removeCard);
+
   const {
     image,
+    id,
     name,
     setName,
     setDate,
@@ -30,7 +34,7 @@ const CartItem = props => {
           </div>
         </div>
         <div className="price-container">
-          <img src={xCircle} alt="x-circle"/>
+          <img onClick={() => {removeCard(id)}} src={xCircle} alt="x-circle"/>
           <p>$ {price * amount}</p>
         </div>
       </div>
