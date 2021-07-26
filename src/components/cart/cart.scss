@@ -3,6 +3,7 @@
   justify-content: space-between;
   height: 92vh;
   padding: 1.3rem 3.8rem;
+  overflow: scroll;
 
   h1 {
     font-size: 1.5rem;
@@ -102,6 +103,7 @@
     height: fit-content;
     border-radius: 15px;
     padding: 1.5rem;
+    margin-top: 1rem;
 
     .subtotal-container {
       padding: 1rem 0;
@@ -124,7 +126,7 @@
         background-color: #45a049;
       }
       width: 100%;
-      font-size: 1.1rem;
+      font-size: 1rem;
       background-color: #4CAF50;
       color: white;
       padding: 12px 20px;
