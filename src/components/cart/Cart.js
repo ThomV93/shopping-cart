@@ -14,7 +14,7 @@ const Cart = () => {
       <div className="cart-items-container">
         <h1>Shopping Cart</h1>
         {cart.map((item, i) => (
-          <CartItems item={item} key={item.id}/>
+          <CartItems item={item} key={item.id} i={i}/>
         ))}
       </div>
       <OrderSummary total={total}/>
