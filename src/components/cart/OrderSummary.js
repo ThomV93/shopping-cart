@@ -1,4 +1,8 @@
+import useStore from "../../services/cartState";
+import { Link } from "react-router-dom";
+
 const OrderSummary = props => {
+  const clearCart = useStore(state => state.clearCart);
   const {total} = props;
   
   return (
@@ -20,7 +24,9 @@ const OrderSummary = props => {
             <p>Total</p>
             <p>$ {total}</p>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <Link to="/">
+            <button onClick={() => {clearCart()}}>PROCEED TO CHECKOUT</button>
+          </Link>
         </div>
       </div> 
     </>
