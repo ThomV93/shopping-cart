@@ -1,3 +1,5 @@
+$yellow: rgb(251,194,43);
+
 .home {
   font-family: "Open Sans";
   display: grid;
@@ -5,8 +7,8 @@
   color: #fff;
   height: 92vh;
   overflow: hidden;
-  background: rgb(251,194,43);
-  background: linear-gradient(207deg, rgba(251,194,43,1) 4%, rgba(58,79,153,1) 76%);
+  background: $yellow;
+  background: linear-gradient(207deg, $yellow 4%, rgba(58,79,153,1) 76%);
 
   .text-container {
     display: flex;
@@ -31,13 +33,26 @@
       font-size: 1.8rem;
     }
 
-    div {
+    .credits {
       display: flex;
       justify-content: flex-end;
       flex-direction: column;
       flex-grow: 1;
       align-self: flex-end;
       text-align: right;
+
+      div {
+        display: flex;
+        align-items: center;
+
+        a {
+          display: flex;
+          align-items: center;
+          color: inherit;
+          text-decoration: none;
+          margin-left: 5px;
+        }
+      }
     }
   }
 
