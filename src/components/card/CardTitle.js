@@ -1,5 +1,5 @@
 const CardTitle = props => {
-
+  // variable destructuring
   const {
     name,
     type,

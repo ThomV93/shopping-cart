@@ -1,5 +1,5 @@
 const CardDetails = props => {
-
+  // variable destructuring
   const {
     hp,
     level,

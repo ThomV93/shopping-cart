@@ -1,5 +1,5 @@
 const CardPrices = props => {
-
+  // variable destructuring
   const { 
     high, 
     market, 

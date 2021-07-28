@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import CardTitle from "./CardTitle";
 import CardDetails from "./CardDetails";
 import CardPrices from "./CardPrices";
@@ -27,6 +27,8 @@ const Card = ({ match }) => {
     subtypes: [],
     set: {},
   });
+
+  // -------- Data Organization section ------ // 
 
   const title = {
     name: item.name,

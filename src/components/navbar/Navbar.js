@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import useStore from "../../services/cartState";
 import "./navbar.scss";
 
 const Navbar = () => {
-
+  // retrieve cart array from shared state
   const cart = useStore(state => state.cart);
 
   return (

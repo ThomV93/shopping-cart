@@ -2,8 +2,10 @@ import useStore from "../../services/cartState";
 import { Link } from "react-router-dom";
 
 const OrderSummary = props => {
+  // retrieve method from shared state
   const clearCart = useStore(state => state.clearCart);
-  const {total} = props;
+  // variable destructuring
+  const { total } = props;
   
   return (
     <>

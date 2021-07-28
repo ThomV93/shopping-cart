@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./cards.scss";
 
@@ -6,7 +6,7 @@ const Cards = ({ match }) => {
   // retrieve relevant data from api
   useEffect(() => {
     const fetchCards = async () => {
-      // use router provided props in the request
+      // use router provided props for the API request
       const data = await fetch(`https://api.pokemontcg.io/v2/cards?q=set.id:${match.params.id}`);
       const cards = await data.json();
       setCards(cards.data);

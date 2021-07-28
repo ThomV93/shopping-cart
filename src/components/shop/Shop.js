@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./shop.scss";
 
@@ -9,7 +9,9 @@ const Shop = () => {
 
   const [items, setItems] = useState([]);
 
+  // fetch data from Pokemon TCG API
   const fetchItems = async () => {
+    // retrieve all sets from the Base series
     const data = await fetch("https://api.pokemontcg.io/v2/sets?q=series:base");
     const items = await data.json();
     setItems(items.data);
