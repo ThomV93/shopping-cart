@@ -11,7 +11,7 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <div className="cart-items-container">
+      <div>
         <h1>Shopping Cart</h1>
         {cart.map((item, i) => (
           <CartItems item={item} key={item.id} i={i}/>

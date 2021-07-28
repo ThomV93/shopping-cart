@@ -3,7 +3,7 @@
   height: auto;
   padding: 1rem 0;
   border-bottom: 2px solid #d3d3d3;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.7rem;
 }
 
 .card {
@@ -22,9 +22,9 @@
 
   .card-details {
     width: 90%;
-    padding: 0 3.1rem;
-    // margin-left: 10rem;
+    padding: 0 3.1rem 1.5rem 3.1rem;
     max-width: 50vw;
+    overflow: scroll;
 
     h2 {
       margin: 0.2rem 0;

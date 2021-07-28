@@ -25,11 +25,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 4rem;
     list-style: none;
     width: 57%;
 
     li {
-      margin-left: 4rem;
       font-weight: 300;
     }
   }
