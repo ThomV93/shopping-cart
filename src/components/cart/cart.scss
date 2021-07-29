@@ -12,10 +12,14 @@
     padding: 0;
   }
 
+  .cart-items-container {
+    width: 60%;
+    margin-right: 2rem;
+  }
+
   .item-container {
     display: flex;
     justify-content: space-between;
-    width: 800px;
     max-width: 1000px;
     border-bottom: 1px solid #aaa;
     padding: 1.5rem;

@@ -1,5 +1,5 @@
 import useStore from "../../services/cartState";
-import CartItems from "./CartItems";
+import CartItem from "./CartItem";
 import OrderSummary from "./OrderSummary";
 import "./cart.scss";
 
@@ -11,10 +11,10 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <div>
+      <div className="cart-items-container">
         <h1>Shopping Cart</h1>
         {cart.map((item, i) => (
-          <CartItems item={item} key={item.id} i={i}/>
+          <CartItem item={item} key={item.id} i={i}/>
         ))}
       </div>
       <OrderSummary total={total}/>
